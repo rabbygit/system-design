@@ -27,3 +27,23 @@ UDP is commonly used in time-sensitive communications where occasionally droppin
 This also makes UDP the ideal protocol for online gaming. Similarly, because DNS servers both need to be fast and efficient, they operate though UDP as well.
 
 ![UDP](https://www.cloudflare.com/img/learning/ddos/glossary/user-datagram-protocol-udp/tcp-vs-udp.svg)
+
+#### Ring Buffer:
+A ring is a circular buffer where packets for rx(receives)/tx(transmits) are stored. More specifically, each slot in the ring contains the length and physical address of a packet buffer. CPU-accessible registers in the NIC indicate the portion of the ring available for transmission or reception. 
+
+When a packet arrives, the NIC does a DMA to store the packet in the address pointed to by the RX ring, updates the ring with this information that the packet has been copied, and raises an interrupt to the kernel. Until the kernel (device driver) comes around to servicing the interrupt, further interrupts from the NIC are disabled. The interrupts are reenabled once the kernel services the interrupt from this device. The kernel only does minimal procesing in the interrupt service routine / hardware interrupt handler, and schedules a kernel thread (softirq) to perform the rest of the TCP/IP processing (bottom half of the interrupt service routine). The bottom half / softirq removes the buffers from the ring for network stack processing, and reinitializes the ring with new buffers. After TCP/IP processing, the packet buffers are queued up at the receive socket buffer. When the user program calls read, the payload is copied from the kernel buffers to userspace memory, and the kernel buffer is freed. New connections (after completion of 3-way TCP handshake) are queued up in the backlog queue and can be accessed via accept. 
+
+![RING_BUFFER](https://i.stack.imgur.com/BKBvW.png)
+
+#### CIDR:
+Classless inter-domain routing (CIDR) is a set of Internet protocol (IP) standards that is used to create unique identifiers for networks and individual devices. The IP addresses allow particular information packets to be sent to specific computers. Shortly after the introduction of CIDR, technicians found it difficult to track and label IP addresses, so a notation system was developed to make the process more efficient and standardized. That system is known as CIDR notation. 
+
+![CIDR](https://whatismyipaddress.com/wp-content/uploads/cidr-notation.png)
+
+#### DHCP:
+A DHCP Server is a network server that automatically provides and assigns IP addresses, default gateways and other network parameters to client devices. It relies on the standard protocol known as Dynamic Host Configuration Protocol or DHCP to respond to broadcast queries by clients.
+
+A DHCP server automatically sends the required network parameters for clients to properly communicate on the network. Without it, the network administrator has to manually set up every client that joins the network, which can be cumbersome, especially in large networks. DHCP servers usually assign each client with a unique dynamic IP address, which changes when the client’s lease for that IP address has expired.
+
+![DHCP](https://upload.wikimedia.org/wikipedia/commons/e/e4/DHCP_session.svg)
+
