@@ -12,27 +12,31 @@ IP address is 32 bit and it is represeneted as four octetes(each octete is 8 bit
 A network consits of two or more computers that are linked to each other in order to exchange resources.When a network consits a network,,it is called sub-nets.
 
 #### Repeater:
-In telecommunications, a repeater is an electronic device that receives a signal and retransmits it. Repeaters are used to extend transmissions so that the signal can cover longer distances or be received on the other side of an obstruction.
+In telecommunications, a repeater is an electronic device that receives a signal and retransmits/re-generates it. Repeaters are used to extend transmissions so that the signal can cover longer distances or be received on the other side of an obstruction.
+
+<img width="898" alt="image" src="https://user-images.githubusercontent.com/39536118/227763131-8c80dc00-84ef-404f-a9ec-c4dc0e8fb2ca.png">
 
 ![Repeater image](https://www.tutorialsweb.com/images/networking-images/repeater.jpg)
 
 #### Hub:
-It is basically a multiport repeater and used to connect multiple devices in a network.One important note is hub can not filter data so data packets are sent to all connected devices and don't have the intillegence to find out the best path for data packets.
+It is basically a multiport repeater and used to connect multiple devices in a network. One important note is hub can not filter data so data packets are sent to all connected devices and don't have the intillegence to find out the best path for data packets.
 
-![Hub](https://www.learnabhi.com/wp-content/uploads/2018/02/switch-and-router.jpg)
+<img width="942" alt="image" src="https://user-images.githubusercontent.com/39536118/227763275-97a1de54-a060-4aaf-95b8-4bef2bae4f51.png">
 
 #### Bridge:
 Bridge sits between Hub connected hosts. It has only two ports and can filter contents. It can take decision to allow the data packets to travel to other side of the bridge.
 
-![Bridge](https://digitalthinkerhelp.com/ezoimgfmt/i.ibb.co/2NFS67b/what-is-bridge.png?ezimgfmt=rs:364x194/rscb1/ng:webp/ngcb1)
+<img width="915" alt="image" src="https://user-images.githubusercontent.com/39536118/227763350-616c8a12-2b1d-4257-97bd-1192cb58d737.png">
 
 #### Switches:
 It facilities communication *within* a network which is a combination of hub and bridge. It has multiple port repeater and also can filter conetents.
 
-![switch](https://image.slidesharecdn.com/networkdevices-ppt-150907062314-lva1-app6892/95/network-devices-ppt-5-638.jpg?cb=1441607220)
+<img width="897" alt="image" src="https://user-images.githubusercontent.com/39536118/227763796-c8b5fb94-cf9f-4bcd-8978-c8b59457d0bd.png">
 
 #### Routers:
-It facilities communiacation *between* networks. It knows which networks they are connected to,stroed in routing tables.
+It facilities communiacation *between* networks. It knows which networks they are connected to, stroed in routing tables.
+
+<img width="911" alt="image" src="https://user-images.githubusercontent.com/39536118/227764008-6b384c8d-d672-4c44-8903-c214d62b742f.png">
 
 The router basically performs two major functions: 
 ##### Forwarding – 
@@ -40,6 +44,10 @@ The router receives the packets from its input ports, checks its header, perform
 ##### Routing – 
 Routing is the process by which the router ascertains what is the best path for the packet to reach the destination, It maintains a routing table which is made using different algorithms by the router only.
 ![router](https://i.ytimg.com/vi/ZvWn5xBflUs/maxresdefault.jpg)
+
+Summary:
+
+<img width="894" alt="image" src="https://user-images.githubusercontent.com/39536118/227764137-7f17d1f0-825f-4a9e-87dd-85814add6e02.png">
 
 #### MAC address:
 A media access control address (MAC address) is a unique identifier assigned to a network interface controller (NIC) for use as a network address in communications within a network segment. MAC addresses are used in the media access protocol of the data link layer.MAC addresses are primarily assigned by device manufacturers, and are therefore often referred to as the burned-in address, or as an Ethernet hardware address, hardware address, or physical address.
